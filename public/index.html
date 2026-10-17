@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b16" />
+  <title>Nova — AI Voice Assistant</title>
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Nova home">
+        <span class="brand-mark">✦</span><span>NOVA<span class="brand-light"> AI</span></span>
+      </a>
+      <div class="top-status"><span class="status-dot"></span><span id="connectionLabel">AI SYSTEM READY</span></div>
+      <button id="voiceToggle" class="small-button" title="Toggle spoken replies" aria-label="Toggle spoken replies">🔊 <span id="voiceLabel">Voice on</span></button>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL AI <span class="eyebrow-line"></span></div>
+      <h1>Ideas become <span>intelligence.</span></h1>
+      <p class="subheading">Talk naturally. Ask anything. Explore what’s happening now.</p>
+
+      <div class="orb-stage">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div>
+        <div id="orb" class="orb">
+          <div class="orb-glow"></div><div class="orb-core"></div>
+          <div class="orb-shine"></div>
+        </div>
+        <div class="orb-caption" id="orbCaption">READY WHEN YOU ARE</div>
+      </div>
+
+      <div class="voice-controls">
+        <button id="micButton" class="mic-button" aria-label="Start voice input">
+          <svg id="micIcon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3Z"/><path d="M19 11a7 7 0 0 1-14 0M12 18v4m-4 0h8"/></svg>
+        </button>
+        <div class="mic-title" id="micTitle">Tap the orb to speak</div>
+        <div class="mic-hint" id="micHint">Allow microphone access when your browser asks.</div>
+      </div>
+
+      <div class="transcript-panel" id="transcriptPanel" hidden>
+        <div class="panel-label">I HEARD YOU SAY</div>
+        <p id="transcriptText"></p>
+      </div>
+
+      <section class="response-card" id="responseCard" aria-live="polite">
+        <div class="response-head"><span class="response-icon">✦</span><span id="responseTitle">NOVA’S RESPONSE</span><span class="response-line"></span></div>
+        <div id="responseText" class="response-text">Hey! I’m Nova. Press the microphone and ask me something. I can use an AI model and web search to help with current questions once you add your API key.</div>
+        <div id="sources" class="sources"></div>
+        <div class="response-actions">
+          <button id="speakAgain" class="text-button">▶ Speak response</button>
+          <button id="stopSpeaking" class="text-button">■ Stop voice</button>
+          <button id="clearButton" class="text-button">↺ Reset</button>
+        </div>
+      </section>
+
+      <div class="fallback-input">
+        <span class="input-label">OR TYPE A MESSAGE</span>
+        <form id="askForm">
+          <input id="textInput" type="text" autocomplete="off" placeholder="Ask Nova anything…" aria-label="Type your question" />
+          <button id="sendButton" type="submit" aria-label="Send message">↑</button>
+        </form>
+      </div>
+
+      <footer><span>VOICE-FIRST AI INTERFACE</span><span>BUILT FOR CURIOSITY <b>✦</b></span></footer>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
